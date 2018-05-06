@@ -1,0 +1,62 @@
+$superhero-color: #aaa;
+
+%superhero-border {
+  border-style: solid;
+  border-color: $superhero-color;
+}
+
+.superhero {
+  border-width: 1px;
+  margin-bottom: 1rem;
+
+  @extend .w-100;
+  @extend .float-left;
+  @extend .position-relative;
+  @extend %superhero-border;
+
+  &-image {
+    $size: 180px;
+
+    border-width: 1px;
+    border-radius: $size / 2;
+    width: $size;
+    height: $size;
+    overflow: hidden;
+    margin: 0.5rem auto;
+
+    @extend %superhero-border;
+  }
+
+  &-nickname {
+    background-color: lighten($superhero-color, 30%);
+    border-width: 1px 0 0 0;
+    padding: 0.5rem;
+
+    @extend .text-center;
+    @extend .font-weight-bold;
+    @extend %superhero-border;
+  }
+
+  &-control {
+     &-btn {
+       border-width: 1px 0 0 0;
+       width: 33.333333333%;
+
+       @extend .float-left;
+       @extend %superhero-border;
+
+       & + & {
+         border-width: 1px 0 0 1px;
+       }
+
+       & > button {
+         background-color: transparent;
+         border: 0 !important;
+         color: #444 !important;
+         font-size: 1.8rem;
+
+         @extend .w-100;
+       }
+     }
+   }
+}

@@ -1,0 +1,42 @@
+.mask {
+  @extend .d-none;
+  @extend .w-100;
+  @extend .h-100;
+  @extend .position-absolute;
+  top: 0;
+  left: 0;
+
+  &-light {
+    background-color: white;
+  }
+
+  &-dark {
+    background-color: black;
+
+    @extend .text-white;
+  }
+
+  &-show {
+    @extend .d-block;
+  }
+
+  &-reset-position {
+    @extend .position-static;
+  }
+
+  &-content {
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s;
+    top: 0;
+    left: 0;
+
+    @extend .position-fixed;
+    @extend .w-100;
+    @extend .h-100;
+
+    &-show {
+      opacity: .8;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@include media-breakpoint-up(sm) {
+  .modal-dialog {
+    width: 60%;
+
+    .modal-content {
+      max-width: 100%;
+    }
+  }
+}
+
+.modal-content {
+  background-color: transparent;
+  overflow-y: hidden;
+}
+
+.modal-header {
+  @extend .text-white;
+
+  &.form-insert-header {
+    background-color: $success;
+  }
+
+  &.form-edit-header {
+    background-color: $danger;
+  }
+}
+
+.modal-footer {
+  background-color: white;
+}
+
+.modal-backdrop {
+  z-index: 0;
+}
